@@ -2,7 +2,7 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
 from df_user import user_decorator
-from models import *
+from .models import *
 
 @user_decorator.login
 def cart(request):

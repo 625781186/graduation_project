@@ -1,6 +1,6 @@
 #coding=utf-8
 from django.shortcuts import render,redirect
-from models import *
+from .models import *
 from hashlib import sha1
 from django.http import JsonResponse,HttpResponseRedirect
 from . import user_decorator
@@ -53,7 +53,7 @@ def login_handle(request):
     jizhu=post.get('jizhu',0)
     #根据用户名查询对象
     users=UserInfo.objects.filter(uname=uname)#[]
-    print uname
+    print (uname)
     #判断：如果未查到则用户名错，如果查到则判断密码是否正确，正确则转到用户中心
     if len(users)==1:
         s1=sha1()

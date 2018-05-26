@@ -27,7 +27,7 @@ SECRET_KEY = '9ih9+=2m7y$yljy9e5r@#y$5tf66!p_j2qubpkk3+#9*#h0cul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','*']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'df_cart',
     'df_order',
     'haystack',
+    'plc_store',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,12 +85,12 @@ WSGI_APPLICATION = 'dailyfresh.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST':'localhost',
-        'PORT':'3306',
-        'USER':'root',
-        'PASSWORD':'mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tiantian',
+        'USER': 'postgres',
+        'PASSWORD': 'lll852460+',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',    
     }
 }
 
@@ -130,7 +131,7 @@ TINYMCE_DEFAULT_CONFIG = {
 HAYSTACK_CONNECTIONS = {
     'default': {
         #使用whoosh引擎
-        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
         #索引文件路径
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
     }

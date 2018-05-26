@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import *
+from .models import *
 
 class TypeInfoAdmin(admin.ModelAdmin):
     list_display = ['id','ttitle']
